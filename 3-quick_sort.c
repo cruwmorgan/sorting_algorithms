@@ -10,6 +10,7 @@ void swap(int *array, ssize_t item1, ssize_t item2)
 {
 	int tmp;
 	tmp = array[item1];
+
 	array[item1] = array[item2];
 	array[item2] = tmp;
 }
@@ -58,9 +59,11 @@ int partition(int *array, ssize_t first, ssize_t last, size_t size)
 void qs(int *array, ssize_t first, ssize_t last, int size)
 {
 	ssize_t position = 0;
+
 	if (first < last)
 	{
 		position = partition(array, first, last, size);
+
 		qs(array, first, position - 1, size);
 		qs(array, position + 1, last, size);
 	}
